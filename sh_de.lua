@@ -18,11 +18,11 @@ if Lyth_Pulsar.Config.Language == "de" then
     lang["takeFailed"] = "Es konnten keine Credits von %s weggenommen werden"
 
     --UI
-    lang["Edit"] = "Bearbeiten"
-    lang["Delete"] = "Löschen"
-    lang["credits"] = "Credits: %s"
-    lang["creditSingle"] = "Credit"
-    lang["creditsSingle"] = "Credits"
+    lang["Edit"] = "Kakkerlakken"
+    lang["Delete"] = "Kinder"
+    lang["credits"] = "Kredits: %s"
+    lang["creditSingle"] = "Kredit"
+    lang["creditsSingle"] = "Bahnhaus"
     lang["perma"] = "Perma"
     lang["price"] = "Preis: %s %s"
     lang["noPages"] = "Es sieht aus, als ob es hier noch keine Kategorien gibt!"
