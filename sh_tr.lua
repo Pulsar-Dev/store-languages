@@ -3,115 +3,139 @@ Lyth_Pulsar.Lang = Lyth_Pulsar.Lang or {}
 Lyth_Pulsar.Config = Lyth_Pulsar.Config or {}
 local lang = Lyth_Pulsar.Lang
 
-if Lyth_Pulsar.Config.Language == "tr" then
-    lang["Next"] = "Ileri"
+if (not Lyth_Pulsar.Config.Language) or Lyth_Pulsar.Config.Language == "tr" then
+    lang["Next"] = "İleri"
     lang["Back"] = "Geri"
-    lang["noAdminMod"] = "Desteklenen bir admin modu bulunamadı. Lütfen destek talebi açın"
-
-    lang["notifyMessageSuccess"] = "Başarıyla %s kredi verildi!"
-    lang["notifyMessageSuccessName"] = "Başarıyla %s kişisine %s kredi verildi!"
-    lang["failedToGive"] = "%s kişisine kredi verilemedi"
-
-    lang["failedNegative"] = "%s kişisinden kredileri eksiye düşeceği için kredi silme başarısız oldu"
-    lang["failedNegativeNotify"] = "Hiç kredileri olmadığı için bu kişiden kredi silme başarısız oldu!"
-    lang["takeNotifySuccess"] = "Başarıyla %s kişisinden %s kredi silindi!"
-    lang["takeFailed"] = "%s kişinin kredisini silme başarısız oldu"
-
+    lang["noAdminMod"] = "Desteklenen yönetici modu bulunamadı. Lütfen bir destek talebi oluşturun."
+    
+    lang["notifyMessageSuccess"] = "%s kredisi başarıyla verildi!"
+    lang["notifyMessageSuccessName"] = "%s %s kredisi başarıyla verildi!"
+    lang["failedToGive"] = "%s kullanıcısına kredi verme başarısız oldu"
+    
+    lang["failedNegative"] = "%s kullanıcısından kredi çıkarmak başarısız oldu, çünkü negatif krediye sahip olacaklardı"
+    lang["failedNegativeNotify"] = "Bu kullanıcının kredisi olmadığından kredi alınamadı!"
+    lang["takeNotifySuccess"] = "%s kullanıcısından %s kredisi başarıyla alındı!"
+    lang["takeFailed"] = "%s kullanıcısından kredi çıkarma başarısız oldu"
+    lang["RateLimit"] = "Şu anda bir kısıtlama uygulanıyorsunuz! Lütfen tekrar denemeden önce bekleyin"
+    
     --UI
-
     lang["Edit"] = "Düzenle"
     lang["Delete"] = "Sil"
-    lang["credits"] = "Kredi: %s"
+    lang["credits"] = "Krediler: %s"
+    lang["costed"] = "Harcama: %s"
     lang["creditSingle"] = "Kredi"
-    lang["creditsSingle"] = "Kredi"
-    lang["perma"] = "Kalıcı"
+    lang["creditsSingle"] = "Krediler"
+    lang["perma"] = "Sonsuz"
     lang["price"] = "Fiyat: %s %s"
-    lang["noPages"] = "Görünüşe göre burada henüz kategori yok!"
+    lang["noPages"] = "Merhaba! Eklenti henüz yapılandırılmamış gibi görünüyor! Başlamak için yönetici paneline gidin!"
+    
     lang["Purchase"] = "Satın Al"
-    lang["alreadyPurchased"] = "Bu eşyayı zaten satın aldın!"
-    lang["ItemConfig"] = "Eşya Konfig"
-    lang["CategoryConfig"] = "Kategori Konfig"
-
-    lang["CategoryTitle"] = "Kategori Oluştur"
-    lang["EditCategoryTitle"] = "Kategori Düzenle"
+    lang["alreadyPurchased"] = "Bu öğeyi zaten satın aldınız!"
+    
+    lang["AdminConfigTitle"] = "Yönetici Ayarları"
+    
+    lang["ItemConfig"] = "Öğe Ayarları"
+    lang["CategoryConfig"] = "Kategori Ayarları"
+    
+    lang["CategoryTitle"] = "Yeni Kategori"
+    lang["EditCategoryTitle"] = "Kategoriyi Düzenle"
     lang["CategoryNamePlaceholder"] = "Silahlar"
     lang["Create"] = "Oluştur"
-    lang["CategoryName"] = "Kategori Ismi"
-    lang["ImgurID"] = "Imgur ID"
-    lang["CatNameLong"] = "Kategori ismi çok uzun!"
+    lang["CategoryName"] = "Kategori Adı"
+    lang["ImgurID"] = "Imgur Kimliği"
+    lang["CatNameLong"] = "Kategori adı çok uzun!"
     lang["CatCreated"] = "Kategori Oluşturuldu!"
     lang["CatDeleted"] = "Kategori Silindi!"
     lang["CatEdited"] = "Kategori Düzenlendi!"
-    lang["CatExists"] = "Böyle bir kategori zaten var!"
+    lang["CatExists"] = "Kategori zaten mevcut!"
+    lang["NoCategory"] = "Kategori Yok"    
 
-    lang["ItemTitle"] = "Eşya Oluştur"
+    lang["ItemTitle"] = "Öğe Oluştur"
     lang["ItemNamePlaceholder"] = "AK-47"
     lang["Model"] = "Model"
-    lang["ImgurLogo"] = "Imgur Logo"
-    lang["EditItemTitle"] = "Eşyayı Düzenle"
-    lang["ItemNameLong"] = "Eşya ismi çok uzun!"
-    lang["ItemCreated"] = "Eşya Oluşturuldu!"
-    lang["ItemNoCat"] = "HATA: Böyle bir kategori yok"
-    lang["ItemDeleted"] = "Eşya Silindi!"
-    lang["ItemEdited"] = "Eşya Oluşturuldu!"
-    lang["ItemExists"] = "Eşya zaten var!"
+    lang["ImgurLogo"] = "Imgur Logosu"
+    lang["EditItemTitle"] = "Öğe Düzenle"
+    lang["ItemNameLong"] = "Öğe adı çok uzun!"
+    lang["ItemCreated"] = "Öğe Oluşturuldu!"
+    lang["ItemNoCat"] = "Uyarı: Kategori mevcut değil"
+    lang["ItemDeleted"] = "Öğe Silindi!"
+    lang["ItemEdited"] = "Öğe Düzenlendi!"
+    lang["ItemExists"] = "Öğe zaten mevcut!"
     lang["Package"] = "Paket"
-    lang["PackageArgs"] = "Paket Ayarları"
+    lang["PackageArgs"] = "Paket Argümanları"
+    lang["PackageArgsSmall"] = "SteamID/64 için {sid} / {sid64}"
     lang["IsPermanent"] = "Kalıcı mı?"
-    lang["ItemName"] = "Eşya Ismi"
+    lang["ItemName"] = "Öğe Adı"
     lang["Price"] = "Fiyat"
     lang["Category"] = "Kategori"
     lang["Type"] = "Tip"
-    lang["netFailed"] = "%s adlı kullanıcı ayarlanamadı."
-
-    lang["handlingPackage"] = "%s eylemiyle %s için %s paketi işleniyor"
-    lang["armorFailed"] = "%s AP %s kişisine verilemedi"
+    lang["netFailed"] = "%s kullanıcısının ayarları yapılamadı."
+    
+    lang["CreateNewItem"] = "Yeni Oluştur"
+    lang["CreateNewItemDesc"] = "Yeni bir öğe oluşturun!"
+    
+    lang["handlingPackage"] = "%s paketi %s için işleniyor, işlem: %s"
+    lang["packageFailed"] = "%s paketi %s'e verilemedi"
+    lang["armorFailed"] = "%s zırhı %s'e verilemedi"
     lang["concommandFailed"] = "Komut çalıştırılamadı: %s"
-    lang["entityFailed"] = "%s Varlığı çıkarılamadı"
-    lang["healthFailed"] = "%s HP %s kişisine verilemedi"
-    lang["moneyFailed"] = "Desteklenen oyun modu bulunamadığından $%s öğesi %s kişisine verilemedi"
-    lang["rankFailed"] = "%s rütbesi %s kişisine verilemdi"
-    lang["weaponFailed"] = "%s silahı %s kişisine verilemdi"
-
-
-    lang["areYouSure"] = "Emin misin?"
-    lang["purchaseConfirm1L1"] = "Bunu satın almak istediğinden emin misin"
-    lang["purchaseConfirm1L2"] = "'%s' eşyasını %s krediye?"
-
-    lang["purchaseConfirm2L1"] = "'%s' satın almak istediğinden emin misin"
-    lang["purchaseConfirm2L2"] = "%s krediye?"
-
-    lang["purchaseNotEnough"] = "Bunu satın almak için yeterli kredin yok."
-    lang["packagePurchased"] = "Successfully bought %s for %s credits."
-
-    -- Intergrations
-    lang["bLogsGiven"] = "{1} {4} kişisine {2} {3} verdi "
-    lang["bLogsRemoved"] = "{1} {4} kişisinden silindi {2} {3}"
-    lang["bLogsPurchase"] = "{1} {3} krediye {2} satın aldı"
-
-    lang["SAMGiveCreditsHelp"] = "Oyuncuya kredi ver"
-    lang["SAMGiveCreditsPlayerHint"] = "Kredi verilecek oyuncu"
+    lang["entityFailed"] = "%s varlığı oluşturulamadı"
+    lang["healthFailed"] = "%s sağlık puanı %s'e verilemedi"
+    lang["moneyFailed"] = "Desteklenen bir oyun modu bulunmadığı için $%s kredi %s'e verilemedi"
+    lang["rankFailed"] = "%s kullanıcısının rütbesi %s olarak ayarlanamadı"
+    lang["weaponFailed"] = "%s silahı %s'e verilemedi"
+    
+    lang["areYouSure"] = "Emin misiniz?"
+    lang["purchaseConfirm1L1"] = " '%s' öğesini satın almak istediğinizden emin misiniz?"
+    lang["purchaseConfirm1L2"] = "Fiyatı: %s Kredi."
+    
+    lang["purchaseConfirm2L1"] = " '%s' öğesini satın almak istediğinizden emin misiniz?"
+    lang["purchaseConfirm2L2"] = "Fiyatı: %s Kredi."
+    
+    lang["purchaseNotEnough"] = "Bu öğeyi satın almak için yeterli krediniz yok."
+    lang["packagePurchased"] = "%s öğesi %s kredi karşılığında başarıyla satın alındı."
+    
+    lang["sellConfirmL1"] = "Emin misiniz?"
+    lang["sellConfirmL2"] = "Bu öğeyi satmak istediğinizden emin misiniz?"
+    lang["sellConfirmL3"] = "Bunu yaparak %s kredi iadesi alacaksınız."
+    lang["Return"] = "Sat"
+    lang["ErrorRemove"] = "Satın alma iade edilemedi"
+    lang["SellBackSuccess"] = "Satın alma başarıyla iade edildi"
+    
+    -- Entegrasyonlar
+    lang["bLogsGiven"] = "{1} {3} {2}'ye {4}'e verdi"
+    lang["bLogsRemoved"] = "{1} {3} {2}'den {4}'e kaldırdı"
+    lang["bLogsPurchase"] = "{1} {3} kredisi karşılığında {2} satın aldı"
+    
+    lang["SAMGiveCreditsHelp"] = "Bir oyuncuya kredi verin"
+    lang["SAMGiveCreditsPlayerHint"] = "Kredilerin verileceği oyuncu"
     lang["SAMGiveCreditsNumHint"] = "Verilecek kredi miktarı"
-    lang["SAMGiveCreditsGiven"] = "{A} {T} kişisine {V} kredi verdi"
-
-    lang["SAMRemoveCreditsHelp"] = "Bir oyuncudan kredi sil"
-    lang["SAMRemoveCreditsPlayerHint"] = "Kredisi silinecek oyuncu"
-    lang["SAMRemoveCreditsNumHint"] = "Silinecek kredi miktarı"
-    lang["SAMRemoveCreditsRemoved"] = "{A} {T} kişisinden {T} kredi sildi"
-
-    lang["ULXGiveCredits"] = "#A verdi #T #s #s"
-    lang["ULXRemoveCredits"] = "#A #T kişisinden sildi #s #s"
-
-    lang["CreditsAmount"] = "Credits Amount"
-    lang["EnterCreditAmount"] = "Enter Credit Amount"
-    lang["MoneyAmount"] = "Money Amount"
-    lang["EnterMoneyAmount"] = "Enter Money Amount"
-    lang["ConversionRate"] = "Rate: $%s = 1 credit"
-    lang["Other"] = "Other"
-
-    lang["MoneyCredits"] = "Money => Credits"
-    lang["CreditsMoney"] = "Credits => Money"
-
-    lang["Discount"] = "% off!"
-    lang["ForcedPerma"] = "This package cannot be permanent or is already permanent."
+    lang["SAMGiveCreditsGiven"] = "{A}, {T}'ye {V} Kredi verdi"
+    
+    lang["SAMRemoveCreditsHelp"] = "Bir oyuncudan kredi kaldırın"
+    lang["SAMRemoveCreditsPlayerHint"] = "Kredileri kaldırılacak oyuncu"
+    lang["SAMRemoveCreditsNumHint"] = "Kaldırılacak kredi miktarı"
+    lang["SAMRemoveCreditsRemoved"] = "{A}, {T}'den {V} kredi kaldırdı"
+    
+    lang["ULXGiveCredits"] = "#A, #T'e #s #s verdi"
+    lang["ULXRemoveCredits"] = "#A, #T'den #s #s kaldırdı"
+    
+    lang["reviewText1"] = "Pulsar satın aldığınız için teşekkür ederiz. Eklentiden keyif alıyorsanız neden bir inceleme yazmıyorsunuz?"
+    lang["reviewText2"] = "Git "
+    lang["reviewText3"] = " veya yazın"
+    lang["reviewThanks"] = "Pulsar için bir inceleme yazdığınız için teşekkür ederiz!"
+    
+    lang["CreditsAmount"] = "Kredi Miktarı"
+    lang["EnterCreditAmount"] = "Kredi Miktarını Girin"
+    lang["MoneyAmount"] = "Para Miktarı"
+    lang["EnterMoneyAmount"] = "Para Miktarını Girin"
+    lang["ConversionRate"] = "Oran: $%s = 1 kredi"
+    lang["Other"] = "Diğer"
+    
+    lang["MoneyCredits"] = "Para => Kredi"
+    lang["CreditsMoney"] = "Kredi => Para"
+    
+    lang["Discount"] = "% indirim!"
+    lang["ForcedPerma"] = "Bu paket kalıcı olamaz veya zaten kalıcıdır."
 end
+
+// Translate made by: Mert "MasterMister" https://www.gmodstore.com/users/master
